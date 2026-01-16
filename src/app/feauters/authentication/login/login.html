@@ -1,0 +1,33 @@
+
+
+<div class="outer-conatiner">
+  <div class="form">
+    
+    <h4>Login</h4>
+
+    
+    <form class="inputs" (ngSubmit)="submitForm()" #regForm="ngForm">
+      <div class="input-item">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="loginFields.email" name="email">
+        <div id="emailHelp"></div>
+      </div>
+
+      <div class="input-item">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" id="exampleInputPassword1" [(ngModel)]="loginFields.password" name="password">
+
+        @if (wrongCredentials == true) {
+          <div class="warning">Invalid email or password</div>
+        }
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div>
+      <p> <a routerLink="/register">Don't have an account yet?</a></p>
+    </div>
+
+  </div>
+</div>

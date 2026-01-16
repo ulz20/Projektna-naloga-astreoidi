@@ -1,0 +1,92 @@
+<div class="outer-container" #dataForm>
+
+
+  
+  <div class="form">
+    <h4 >Select Dates</h4>
+
+    <form>
+      <div class="inputs">
+        <div class="input-item">
+          <label for="startDate">Start Date: </label>
+          <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate" required>
+        </div>
+
+        <div class="input-item">
+          <label for="endDate">End Date: </label>
+          <input type="date" id="endDate" name="endDate" [(ngModel)]="endDate" required>
+        </div>
+      </div>
+
+
+      <button type="button" (click)="fetchData()" [disabled]="!isDateValid" (click)="dataForm.hidden = true"
+        (click)="changeDates.hidden = false" (click)="asteroids.hidden = false">
+        Submit Date Range
+      </button>
+
+      @if(!isDateValid) {
+      <p class="warning" style="color: red;">
+        Date must be within 7 days and End Date must be after Start Date.
+      </p>
+      }
+    </form>
+  </div>
+
+</div>
+
+<div class="middle">
+  <app-loader [isLoading]="isLoading" (cancelRequest)="stopLoading(); dataForm.hidden = false; changeDates.hidden = true;">
+  </app-loader>
+
+  <span [hidden]="isLoading">
+    <button #changeDates hidden="true" (click)="dataForm.hidden = false" (click)="changeDates.hidden= true"
+      (click)="asteroids.hidden = true">Change
+      dates</button>
+  </span>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="absolute-conatiner" #asteroids>
+  @if (asteroidiData) {
+  @for (group of asteroidiData.near_earth_objects | keyvalue; track group.key) {
+  @for (asteroid of $any(group.value); track asteroid.id) {
+
+
+  <div class="asteroid"
+  [class.active]="asteroid.isVisible"
+  [style.top]="randomPosition(asteroid.name)" 
+     [style.left]="randomPosition(asteroid.id)">
+
+    
+    <div class="circle" (click)="asteroid.isVisible = !asteroid.isVisible" [style.width.px]="circleSize(asteroid.estimated_diameter.meters.estimated_diameter_min * 0.5)"
+      [style.height.px]="circleSize(asteroid.estimated_diameter.meters.estimated_diameter_min * 0.5)"
+      [style.background]="getAsteroidGradient(asteroid.id)">
+    </div>
+    <div class="asteroid-data" #asteroidData [hidden]="!asteroid.isVisible">
+      <strong>{{ asteroid.name }}</strong><br>
+      ID: {{ asteroid.id }}<br>
+      Diameter: {{asteroid.estimated_diameter.meters.estimated_diameter_min}} m<br>
+      <button (click)="savetoFavourites(asteroid)">
+        @if(isAsteroidFave(asteroid)){
+          Saved!
+        }
+        @else { Save to favourites}
+      </button>
+
+    </div>
+  </div>
+
+
+  }
+  }
+  }
+
+</div>
+

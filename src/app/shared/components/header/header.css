@@ -1,0 +1,186 @@
+/* The main container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 60px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  border: 1px solid white;
+  position: relative;
+
+}
+
+
+.loginInfo {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  margin-right: 3rem;
+  color: white;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+  margin-left: 3rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+}
+
+.navLinks a:hover {
+  color: rgb(216, 116, 23);
+  font-weight: bold;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.logout-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.logout-btn:hover {
+  background-color: rgba(0, 81, 255, 0.1);
+  color: rgb(0, 56, 238);
+  transform: scale(1.1);
+}
+
+.svg {
+  padding-bottom: 2px;
+}
+
+.hamburger-btn {
+  display: none;
+}
+.hamburger-btn:focus {
+  border: 1px solid white;
+}
+
+
+.dropdown-menu {
+  width: 90%;
+  margin: -60px auto 20px auto;
+  background-color: #00000000;
+  border: 1px solid white;
+  border-top: none;
+  border-radius: 0 !important;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
+  padding-bottom: 0;
+}
+
+
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.dropdown-menu a:hover {
+  color: rgb(216, 116, 23);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-user-info {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-bottom: 1px solid white;
+}
+
+
+@media (max-width: 1148px) {
+
+  .navLinks {
+    gap: 10px;
+    margin-left: 0rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .loginInfo {
+    gap: 1rem;
+    margin-right: 0.5rem;
+  }
+
+}
+
+@media (max-width: 860px) {
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
+    padding: 0 10px;
+    border: 1px solid white;
+  }
+  
+  .navLinks {
+    display: none;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: block;
+    justify-self: start;
+    margin-left: 0;
+  }
+
+.loginInfo {
+    display: flex !important; 
+    justify-self: end;        
+    margin-right: 0;
+    gap: 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    justify-self: center; 
+    white-space: nowrap;  
+    padding-left: 5px;
+    
+    
+    position: static;
+    transform: none;
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .dropdown-menu a[routerLink="/asteroidi-date"] {
+    border-bottom: none;
+  }
+
+
+
+
+}

@@ -1,0 +1,153 @@
+.outer-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;  
+               
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid white;
+    padding: 20px; 
+    
+    
+}
+.inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 30px
+}
+
+.input-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+}
+
+input {
+    background-color: transparent;
+    color: white;
+    border: none;
+    
+    
+}
+
+.form button {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+button:hover {
+    border: 1px solid red;
+    color: red;
+}
+
+.form button:hover {
+    color: red;
+    border: 1px solid red;
+}
+
+.warning {
+    max-width: 350px; 
+    margin-top: 10px;
+    
+}
+
+.asteroid {
+    display: flex;
+    flex-direction: row;
+    position: absolute; 
+    transform: translate(-50%, -50%);
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.asteroid-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    z-index: 10; 
+    transition: z-index 0s; 
+
+}
+
+.asteroid.active {
+    z-index: 9999 ;
+}
+
+
+
+
+.absolute-conatiner {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 200vh;
+    background-color: rgba(255, 0, 0, 0);
+    /*overflow: hidden;*/
+}
+
+.middle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 600px) {
+   
+    .outer-container{
+        width: auto;
+        margin-left: 25px;
+        margin-right: 25px;
+        
+    }
+    .inputs {
+        flex-direction: column;
+        gap: 0px; 
+        width: 100%;
+        
+        
+    }
+
+    .form {
+        width: 100%;
+        padding: 30px 20px 30px 20px;       
+        box-sizing: border-box; 
+        
+    }
+
+    
+    .form form {
+        width: 100%;
+    }
+
+   
+    .input-item {
+        width: 100%;
+        align-items: stretch;
+        border-bottom: 1px solid white;
+    }
+
+    input {
+        width: 100%;
+        text-align: center
+    }
+
+    
+}
+
+

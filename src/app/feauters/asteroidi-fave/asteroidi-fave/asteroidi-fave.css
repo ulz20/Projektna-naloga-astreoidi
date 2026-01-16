@@ -1,0 +1,46 @@
+
+.favGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    width: 50%;       
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.circle {
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.diameter{
+    padding-bottom: 10px;
+}
+
+
+@media (max-width: 1449px) {
+    .favGrid {
+        width: 90%;
+    }
+}
+
+@media (max-width: 792px) {
+    .favGrid {
+        width: 90%;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 543px) {
+    .favGrid {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+}
+
+
+

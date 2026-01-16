@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Doto:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Badeen+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
+
+.doto{
+  font-family: 'Doto', sans-serif;
+  color: white;
+}
+
+
+.badeen-display{
+  font-family: "Badeen Display", system-ui;
+}
+
+.atkinson-hyperlegible-mono{
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; 
+}
+
+p, a, span, div, h2{
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  color: white;
+}
+
+body {
+  background: #000000;
+  background: linear-gradient(40deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 64%, rgba(158, 18, 18, 1) 80%, rgba(253, 29, 29, 1) 88%, rgba(253, 84, 44, 1) 94%, rgba(252, 176, 69, 1) 100%);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+button:hover {
+    border: 1px solid red;
+    color: red;
+}
+
+.circle {
+  width: 200px;       
+  height: 200px;       
+  border-radius: 50%;  
+  background: #ff7b00;
+  background: radial-gradient(circle, rgba(255, 123, 0, 1) 0%, rgba(255, 59, 0, 1) 14%, rgba(255, 0, 0, 1) 29%, rgba(250, 27, 27, 1) 58%, rgba(243, 66, 66, 1) 66%, rgba(255, 255, 255, 1) 100%);
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: white !important;
+    transition: background-color 9999s ease-in-out 0s;
+    font-size: inherit !important;
+    font-family: inherit !important;
+}

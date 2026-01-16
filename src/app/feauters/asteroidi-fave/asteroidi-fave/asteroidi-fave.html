@@ -1,0 +1,17 @@
+<h2>Your favorite asteroids</h2>
+
+<div class="favGrid">
+    @for (asteroid of faveList; track asteroid.id) {
+        <div>
+            <div class="circle" [style.background]="getAsteroidGradient(asteroid.id)"></div>
+            
+            <div>
+                <div class="doto-font">{{ asteroid.name | uppercase }}</div>
+                <div>{{ asteroid.id }}</div>
+                <div class="diameter">{{ asteroid.estimated_diameter.meters.estimated_diameter_min }}</div>
+                <div><button (click)="removeFromFave(asteroid)">Remove from favorites</button></div> 
+                <br>
+            </div>
+        </div>
+    } 
+</div>

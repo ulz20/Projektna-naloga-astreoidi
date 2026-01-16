@@ -1,0 +1,56 @@
+<div class="header">
+    <button class="hamburger-btn" (click)="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+
+    <div class="navLinks">
+        <a routerLink="/asteroidi-fave" routerLinkActive="active">Favorites</a>
+        <a routerLink="/asteroidi-date" routerLinkActive="active">Date Range</a>
+    </div>
+
+    <h1 class="doto">Watch your head!</h1>
+
+    <div class="loginInfo">
+        @if(isUserLoggedIn()) {
+        <span class="user-name">
+
+            <!-- ikona userja -->
+            <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24"
+                height="24" viewBox="0 0 600 600" fill="white"><title>Abstract user icon</title><defs><clipPath id="circular-border"><circle cx="300" cy="300" r="280" /></clipPath>
+                </defs><circle cx="300" cy="230" r="115" /><circle cx="300" cy="550" r="205" clip-path="url(#circular-border)" />
+            </svg>
+
+           {{displayUserName()}}</span>
+        }
+        <button class="logout-btn" (click)="onLogout()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                <line x1="12" y1="2" x2="12" y2="12"></line>
+            </svg></button>
+    </div>
+</div>
+
+@if(isMenuOpen) {
+
+    
+
+
+    <div class="dropdown-menu">
+        @if(isUserLoggedIn()) {
+            <div class="dropdown-user-info">
+                 <svg class="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 600 600" fill="white">
+                     <defs><clipPath id="circular-border"><circle cx="300" cy="300" r="280" /></clipPath></defs>
+                     <circle cx="300" cy="230" r="115" /><circle cx="300" cy="550" r="205" clip-path="url(#circular-border)" />
+                </svg>
+                <span>{{displayUserName()}}</span>
+            </div>
+        }
+        <a routerLink="/asteroidi-fave" routerLinkActive="active" (click)="closeMenu()">Favorites</a>
+        <a routerLink="/asteroidi-date" routerLinkActive="active" (click)="closeMenu()">Date Range</a>
+    </div>
+}
